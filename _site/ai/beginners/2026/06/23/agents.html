@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agents: What Happens When AI Starts Taking Action | Frank Sitawa</title>
+    
+    <script>
+        // Check theme preference before rendering to avoid flicker
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Frank Sitawa" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AI Agents: What Happens When AI Starts Taking Action | Frank Sitawa</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="AI Agents: What Happens When AI Starts Taking Action" />
+<meta name="author" content="Francis Sitawa Ongoro" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A chatbot answers questions. An AI agent goes further — it makes decisions, uses tools, and takes steps to complete a goal. Here’s how that works." />
+<meta property="og:description" content="A chatbot answers questions. An AI agent goes further — it makes decisions, uses tools, and takes steps to complete a goal. Here’s how that works." />
+<link rel="canonical" href="http://localhost:4000/ai/beginners/2026/06/23/agents.html" />
+<meta property="og:url" content="http://localhost:4000/ai/beginners/2026/06/23/agents.html" />
+<meta property="og:site_name" content="Frank Sitawa" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-23T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AI Agents: What Happens When AI Starts Taking Action" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Francis Sitawa Ongoro"},"dateModified":"2026-06-23T00:00:00+03:00","datePublished":"2026-06-23T00:00:00+03:00","description":"A chatbot answers questions. An AI agent goes further — it makes decisions, uses tools, and takes steps to complete a goal. Here’s how that works.","headline":"AI Agents: What Happens When AI Starts Taking Action","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/beginners/2026/06/23/agents.html"},"url":"http://localhost:4000/ai/beginners/2026/06/23/agents.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <header>
+    <div style="display: flex; align-items: center;">
+        <img src="/assets/images/profile.jpeg" alt="Frank Sitawa" class="nav-profile-pic">
+        <a href="/" class="site-title">Frank Sitawa</a>
+    </div>
+    <nav style="align-items: center;">
+        
+        <a href="/" >Home</a>
+        
+        <a href="/blog.html" >Blog</a>
+        
+        <a href="/portfolio.html" >Portfolio</a>
+        
+        <a href="/cv.html" >CV</a>
+        
+        <a href="/about.html" >About</a>
+        
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" style="background: none; border: none; cursor: pointer; color: var(--text-color); font-size: 1.2rem; padding: 0;">
+            <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+    </nav>
+</header>
+    <main>
+        <article style="padding-top: 1rem;">
+    <div class="post-header">
+        <h1 class="post-title">AI Agents: What Happens When AI Starts Taking Action</h1>
+        <div class="post-meta" style="margin-bottom: 2rem;">
+            23 Jun 2026
+            
+            
+        </div>
+    </div>
+
+    <div class="post-content">
+        <p>A chatbot answers questions. An AI agent does something more interesting — it makes decisions, uses tools, and takes a sequence of steps to complete a goal.</p>
+
+<p>If LLMs are the brain, agents are what happen when you give that brain hands.</p>
+
+<h2 id="what-makes-something-an-agent">What Makes Something an Agent?</h2>
+
+<p>A basic language model takes input and produces output. One turn, done.</p>
+
+<p>An agent operates in a <strong>loop</strong>:</p>
+
+<ol>
+  <li>It receives a goal.</li>
+  <li>It decides what action to take.</li>
+  <li>It takes that action — searching the web, writing code, calling an API, reading a file.</li>
+  <li>It looks at the result.</li>
+  <li>It decides what to do next.</li>
+</ol>
+
+<p>This continues until the goal is complete — or the agent gets stuck.</p>
+
+<h2 id="a-concrete-example">A Concrete Example</h2>
+
+<p>Say you ask an AI agent: <em>“Research the top three AI tools for recruiters and summarise them in a table.”</em></p>
+
+<p>A chatbot would try to answer from memory, probably giving you outdated information.</p>
+
+<p>An agent would:</p>
+<ul>
+  <li>Search the web for recent articles on AI recruitment tools</li>
+  <li>Open and read several pages</li>
+  <li>Compare the tools across features, pricing, and reviews</li>
+  <li>Write a summary table based on what it actually found</li>
+</ul>
+
+<p>Same question, very different process.</p>
+
+<h2 id="the-tools-agents-use">The Tools Agents Use</h2>
+
+<p>Agents get access to <strong>tools</strong> — functions they can call to interact with the world. Common ones include:</p>
+
+<ul>
+  <li><strong>Web search</strong> — find current information</li>
+  <li><strong>Code execution</strong> — write and run code to solve problems</li>
+  <li><strong>File reading/writing</strong> — work with documents</li>
+  <li><strong>API calls</strong> — interact with external services like calendars, databases, or email</li>
+</ul>
+
+<p>The agent decides <em>which</em> tool to use and <em>when</em>, based on the goal and what it’s learned so far.</p>
+
+<h2 id="why-this-is-a-big-deal">Why This Is a Big Deal</h2>
+
+<p>Most real-world tasks aren’t single questions — they’re processes. Research, then analyse, then draft, then send. Agents can handle multi-step workflows that would otherwise require a human in the loop at every stage.</p>
+
+<p>This is why agents are showing up in software engineering, customer support, and business operations — anywhere a task has multiple steps that currently need a human at every stage.</p>
+
+<h2 id="what-to-watch-out-for">What to Watch Out For</h2>
+
+<p>Agents need guardrails. An agent that can take actions can also take the <em>wrong</em> ones — deleting files, sending premature emails, or looping on a task it can’t complete.</p>
+
+<p>Good agent design includes human checkpoints, especially for high-stakes tasks. Autonomy and oversight work together, not against each other.</p>
+
+<hr />
+<p><em>Francis Sitawa Ongoro is an AI &amp; Fullstack Engineer based in Nairobi, Kenya.</em></p>
+
+    </div>
+    
+    <hr>
+    <a href="/blog.html">&larr; Back to Blog</a>
+</article>
+    </main>
+    <footer>
+    <p>&copy; 2026 Frank Sitawa. Built with Jekyll & GitHub Pages.</p>
+</footer>
+
+    
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="/assets/js/3d-background.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('theme-toggle');
+            const iconDark = document.getElementById('theme-icon-dark');
+            const iconLight = document.getElementById('theme-icon-light');
+
+            function updateIcons(theme) {
+                if (theme === 'light') {
+                    iconDark.style.display = 'block';
+                    iconLight.style.display = 'none';
+                } else {
+                    iconDark.style.display = 'none';
+                    iconLight.style.display = 'block';
+                }
+            }
+
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            updateIcons(currentTheme);
+
+            if(toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    let theme = document.documentElement.getAttribute('data-theme');
+                    theme = (theme === 'dark') ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                    updateIcons(theme);
+                    window.dispatchEvent(new Event('themechange'));
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

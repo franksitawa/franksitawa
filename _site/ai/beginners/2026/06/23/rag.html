@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AI Finds and Uses Information: A Beginner's Guide to RAG | Frank Sitawa</title>
+    
+    <script>
+        // Check theme preference before rendering to avoid flicker
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Frank Sitawa" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How AI Finds and Uses Information: A Beginner’s Guide to RAG | Frank Sitawa</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="How AI Finds and Uses Information: A Beginner’s Guide to RAG" />
+<meta name="author" content="Francis Sitawa Ongoro" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ever wondered why ChatGPT sometimes makes things up — and how smarter AI systems get around that? The answer is RAG." />
+<meta property="og:description" content="Ever wondered why ChatGPT sometimes makes things up — and how smarter AI systems get around that? The answer is RAG." />
+<link rel="canonical" href="http://localhost:4000/ai/beginners/2026/06/23/rag.html" />
+<meta property="og:url" content="http://localhost:4000/ai/beginners/2026/06/23/rag.html" />
+<meta property="og:site_name" content="Frank Sitawa" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-06-23T00:00:00+03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How AI Finds and Uses Information: A Beginner’s Guide to RAG" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Francis Sitawa Ongoro"},"dateModified":"2026-06-23T00:00:00+03:00","datePublished":"2026-06-23T00:00:00+03:00","description":"Ever wondered why ChatGPT sometimes makes things up — and how smarter AI systems get around that? The answer is RAG.","headline":"How AI Finds and Uses Information: A Beginner’s Guide to RAG","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/beginners/2026/06/23/rag.html"},"url":"http://localhost:4000/ai/beginners/2026/06/23/rag.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <header>
+    <div style="display: flex; align-items: center;">
+        <img src="/assets/images/profile.jpeg" alt="Frank Sitawa" class="nav-profile-pic">
+        <a href="/" class="site-title">Frank Sitawa</a>
+    </div>
+    <nav style="align-items: center;">
+        
+        <a href="/" >Home</a>
+        
+        <a href="/blog.html" >Blog</a>
+        
+        <a href="/portfolio.html" >Portfolio</a>
+        
+        <a href="/cv.html" >CV</a>
+        
+        <a href="/about.html" >About</a>
+        
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" style="background: none; border: none; cursor: pointer; color: var(--text-color); font-size: 1.2rem; padding: 0;">
+            <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+    </nav>
+</header>
+    <main>
+        <article style="padding-top: 1rem;">
+    <div class="post-header">
+        <h1 class="post-title">How AI Finds and Uses Information: A Beginner's Guide to RAG</h1>
+        <div class="post-meta" style="margin-bottom: 2rem;">
+            23 Jun 2026
+            
+            
+        </div>
+    </div>
+
+    <div class="post-content">
+        <p>Ever asked an AI chatbot a question and gotten a confidently wrong answer? That’s not a random glitch — it’s a fundamental limitation of how most AI models work. And the fix has a name: <strong>RAG</strong>.</p>
+
+<p>RAG stands for <strong>Retrieval-Augmented Generation</strong>. The idea is simple once you see it.</p>
+
+<h2 id="the-problem-ai-works-from-memory-alone">The Problem: AI Works From Memory Alone</h2>
+
+<p>A standard AI language model is like a very well-read person who studied everything on the internet up to a certain date — then went into a room with no phone, no books, and no Wi-Fi.</p>
+
+<p>They’ll answer from memory. But if something changed after they went in, they won’t know. And if they half-remember something, they’ll fill in the gaps with a guess — and sound completely confident doing it. Researchers call this <strong>hallucination</strong>.</p>
+
+<h2 id="the-fix-give-the-ai-a-way-to-look-things-up">The Fix: Give the AI a Way to Look Things Up</h2>
+
+<p>RAG adds a retrieval step before the AI responds:</p>
+
+<ol>
+  <li>You ask a question.</li>
+  <li>The system searches a knowledge base — documents, PDFs, records — and pulls the most relevant pieces.</li>
+  <li>Those pieces get passed to the AI alongside your question.</li>
+  <li>The AI answers using both what it knows <em>and</em> what it just retrieved.</li>
+</ol>
+
+<p>The AI is no longer working from memory alone.</p>
+
+<h2 id="a-simple-analogy">A Simple Analogy</h2>
+
+<p>You’re a customer support agent. A customer asks about the current savings interest rate. You don’t guess — you search the company handbook and give an accurate answer.</p>
+
+<p>That’s RAG. The handbook is the knowledge base. The search is retrieval. Your response is generation.</p>
+
+<h2 id="why-it-matters">Why It Matters</h2>
+
+<ul>
+  <li><strong>Stays current</strong> — update the knowledge base without retraining the model.</li>
+  <li><strong>More accurate</strong> — the AI works from real documents, not reconstructed memory.</li>
+  <li><strong>Transparent</strong> — you can show users exactly which source the answer came from.</li>
+</ul>
+
+<p>This is why RAG powers legal research tools, medical assistants, enterprise knowledge bases, and customer support bots.</p>
+
+<h2 id="what-rag-doesnt-fix">What RAG Doesn’t Fix</h2>
+
+<p>RAG is powerful but not magic. If the knowledge base has bad information, the AI will use it. If retrieval pulls the wrong documents, the answer suffers. Think of it as giving the AI a library card — whether it finds the right book still matters.</p>
+
+<hr />
+<p><em>Francis Sitawa Ongoro is an AI &amp; Fullstack Engineer based in Nairobi, Kenya.</em></p>
+
+    </div>
+    
+    <hr>
+    <a href="/blog.html">&larr; Back to Blog</a>
+</article>
+    </main>
+    <footer>
+    <p>&copy; 2026 Frank Sitawa. Built with Jekyll & GitHub Pages.</p>
+</footer>
+
+    
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="/assets/js/3d-background.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('theme-toggle');
+            const iconDark = document.getElementById('theme-icon-dark');
+            const iconLight = document.getElementById('theme-icon-light');
+
+            function updateIcons(theme) {
+                if (theme === 'light') {
+                    iconDark.style.display = 'block';
+                    iconLight.style.display = 'none';
+                } else {
+                    iconDark.style.display = 'none';
+                    iconLight.style.display = 'block';
+                }
+            }
+
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            updateIcons(currentTheme);
+
+            if(toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    let theme = document.documentElement.getAttribute('data-theme');
+                    theme = (theme === 'dark') ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                    updateIcons(theme);
+                    window.dispatchEvent(new Event('themechange'));
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

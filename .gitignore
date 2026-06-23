@@ -1,5 +1,4 @@
-# Jekyll build output — never commit this
-_site/
+
 
 # Jekyll cache
 .jekyll-cache/

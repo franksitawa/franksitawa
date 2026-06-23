@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Frank Sitawa</title>
+    
+    <script>
+        // Check theme preference before rendering to avoid flicker
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Frank Sitawa" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Portfolio | Frank Sitawa</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Portfolio" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Technology, Travel, Food &amp; Life" />
+<meta property="og:description" content="Technology, Travel, Food &amp; Life" />
+<link rel="canonical" href="http://localhost:4000/portfolio.html" />
+<meta property="og:url" content="http://localhost:4000/portfolio.html" />
+<meta property="og:site_name" content="Frank Sitawa" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Portfolio" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Technology, Travel, Food &amp; Life","headline":"Portfolio","url":"http://localhost:4000/portfolio.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <header>
+    <div style="display: flex; align-items: center;">
+        <img src="/assets/images/profile.jpeg" alt="Frank Sitawa" class="nav-profile-pic">
+        <a href="/" class="site-title">Frank Sitawa</a>
+    </div>
+    <nav style="align-items: center;">
+        
+        <a href="/" >Home</a>
+        
+        <a href="/blog.html" >Blog</a>
+        
+        <a href="/portfolio.html" class="current">Portfolio</a>
+        
+        <a href="/cv.html" >CV</a>
+        
+        <a href="/about.html" >About</a>
+        
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" style="background: none; border: none; cursor: pointer; color: var(--text-color); font-size: 1.2rem; padding: 0;">
+            <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+    </nav>
+</header>
+    <main>
+        <div class="post-header">
+  <h1 class="post-title">My Portfolio</h1>
+  <p class="post-meta">A collection of my recent projects and work.</p>
+</div>
+
+<div class="portfolio-grid">
+    
+    <div class="portfolio-item">
+        <h2><a href="/portfolio/ecommerce-api.html">E-Commerce Platform API</a></h2>
+        
+        <p class="post-meta" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+            <strong>Tech:</strong> <span class="tech-stack">Node.js, Express, MongoDB, Redis</span>
+        </p>
+        
+        <p>E-Commerce Platform API A highly scalable backend API for a modern e-commerce platform. Features include: User authentication and authorization (JWT). Product catalog management with faceted...</p>
+        <a href="/portfolio/ecommerce-api.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 1rem;">View Project</a>
+    </div>
+    
+    <div class="portfolio-item">
+        <h2><a href="/portfolio/financial-dashboard.html">Financial Dashboard UI</a></h2>
+        
+        <p class="post-meta" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+            <strong>Tech:</strong> <span class="tech-stack">React, TypeScript, Tailwind CSS, D3.js</span>
+        </p>
+        
+        <p>Financial Dashboard UI A comprehensive front-end application for visualizing financial data in real-time. Interactive charts and graphs powered by D3.js. Responsive design using Tailwind CSS....</p>
+        <a href="/portfolio/financial-dashboard.html" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-top: 1rem;">View Project</a>
+    </div>
+    
+</div>
+
+    </main>
+    <footer>
+    <p>&copy; 2026 Frank Sitawa. Built with Jekyll & GitHub Pages.</p>
+</footer>
+
+    
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="/assets/js/3d-background.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('theme-toggle');
+            const iconDark = document.getElementById('theme-icon-dark');
+            const iconLight = document.getElementById('theme-icon-light');
+
+            function updateIcons(theme) {
+                if (theme === 'light') {
+                    iconDark.style.display = 'block';
+                    iconLight.style.display = 'none';
+                } else {
+                    iconDark.style.display = 'none';
+                    iconLight.style.display = 'block';
+                }
+            }
+
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            updateIcons(currentTheme);
+
+            if(toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    let theme = document.documentElement.getAttribute('data-theme');
+                    theme = (theme === 'dark') ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                    updateIcons(theme);
+                    window.dispatchEvent(new Event('themechange'));
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
